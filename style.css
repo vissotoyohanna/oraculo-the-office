@@ -1,81 +1,241 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS', 'Inter', sans-serif; 
 }
 
 body {
-    background-color: #e8e4d9; 
+    background-color: #87CEEB; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+    overflow: hidden;
+    border: 4px solid #333; 
+}
+
+.cabecalho-oraculo {
+    background-color: #FFD166; 
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #333;
+}
+
+.cabecalho-oraculo h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.area-foto {
+    width: 100%;
+    height: 320px;
+    background-color: #FFD166;
+    border-bottom: 4px solid #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
-.card-oraculo {
-    background-color: #ffffff;
-    border: 2px solid #8b7355; 
-    border-radius: 8px;
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 4px 4px 0px #8b7355; 
-}
-
-.card-oraculo h2 {
-    color: #3b2f2f; 
-    margin-bottom: 10px;
-}
-
-.card-oraculo p {
-    color: #555;
-    margin-bottom: 25px;
-}
-
-.frase-container {
-    background-color: #f4f1ea; 
-    padding: 20px;
-    border-radius: 4px;
-    border-left: 5px solid #4a6fa5; 
-    margin-bottom: 25px;
-}
-
-.destaque-en {
-    font-size: 1.2rem;
+#placeholder-carta {
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    font-style: italic;
+    color: #333;
+    text-align: center;
+    width: 200px;
+    height: 260px;
+    border: 4px dashed #333;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-.traducao-pt {
-    font-size: 1rem;
+#foto-personagem {
+    width: 200px;
+    height: 260px;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 4px solid #333;
+    border-radius: 12px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+.conteudo-frase {
+    padding: 30px;
+    background-color: #fff9f0;
+}
+
+.box-idioma {
+    position: relative;
+    padding: 25px 0 10px 0;
+}
+
+.badge {
+    background-color: #EF476F; 
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    border: 2px solid #333;
+}
+
+.texto-principal {
+    font-size: 1.4rem;
+    color: #118AB2; 
+    font-weight: bold;
+    line-height: 1.4;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.texto-secundario {
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 15px;
+    font-style: italic;
+    line-height: 1.4;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.texto-ouro {
+    color: #FFD700 !important; 
+    
+    text-shadow: 
+        -1px -1px 0 #8a6a00,  
+         1px -1px 0 #8a6a00,
+        -1px  1px 0 #8a6a00,
+         1px  1px 0 #8a6a00, 
+         0px 0px 15px rgba(255, 215, 0, 0.8) !important;
+    transform: scale(1.05); 
+}
+
+.carta-ouro {
+    border-color: #FFD700 !important; 
+    animation: brilho-pulsante 1.5s infinite alternate !important; 
+}
+
+
+@keyframes brilho-pulsante {
+    from {
+        box-shadow: 0 0 10px #FFD700, 8px 8px 0px rgba(0, 0, 0, 0.15);
+    }
+    to {
+        box-shadow: 0 0 30px 15px rgba(255, 215, 0, 0.7), 8px 8px 0px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.divisor {
+    border: 0;
+    height: 2px;
+    background-color: #333;
+    margin: 25px 0;
+    border-style: dashed;
 }
 
 .autor-texto {
-    font-weight: bold;
-    color: #8b7355;
     text-align: right;
-    margin-bottom: 0 !important;
-}
-
-button {
-    background-color: #8b7355;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
     font-weight: bold;
-    transition: background 0.2s;
+    color: #333;
+    margin-top: 20px;
+    font-size: 1.2rem;
 }
 
-button:hover {
-    background-color: #6b573e;
+.rodape-oraculo {
+    padding: 20px 30px 30px 30px;
+    background-color: #fff9f0;
+}
+
+.btn-primario {
+    width: 100%;
+    background-color: #06D6A0; 
+    color: #333;
+    border: 3px solid #333;
+    padding: 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #333; 
+    transition: all 0.1s ease;
+}
+
+.btn-primario:hover {
+    background-color: #05b586;
+}
+
+.btn-primario:active {
+    box-shadow: 0px 0px 0px #333;
+    transform: translateY(4px); 
+}
+
+.legal-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #1a4f66;
+    opacity: 0.8;
+}
+
+.legal-footer p {
+    margin-bottom: 4px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        border-radius: 12px;
+        border-width: 3px;
+    }
+    
+    .cabecalho-oraculo h2 {
+        font-size: 1.4rem;
+    }
+
+    .area-foto { 
+        height: 260px; 
+    }
+    
+    #placeholder-carta, #foto-personagem {
+        width: 160px;
+        height: 210px;
+        padding: 6px;
+    }
+    
+    .conteudo-frase {
+        padding: 20px;
+    }
+    
+    .texto-principal {
+        font-size: 1.15rem;
+    }
+    
+    .texto-secundario {
+        font-size: 0.95rem;
+    }
+    
+    .btn-primario {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
 }

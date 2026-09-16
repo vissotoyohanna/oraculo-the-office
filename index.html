@@ -3,31 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oráculo Dunder Mifflin</title>
+    <title>Oráculo de Scranton</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="card-oraculo">
-        <h2>Oráculo Dunder Mifflin ☕</h2>
-        <p>Qual sabedoria de Scranton vai guiar o seu dia?</p>
+    <main class="container">
+        <header class="cabecalho-oraculo">
+            <h2>Oráculo de Scranton</h2>
+        </header>
         
-        <div class="frase-container">
-            <!-- Inglês -->
-            <blockquote id="frase-en" class="destaque-en">
-                "Click the button to reveal your destiny."
-            </blockquote>
+        <div class="area-foto">
+            <div id="placeholder-carta">
+                Sorteie uma Carta
+            </div>
             
-            <!-- Português -->
-            <blockquote id="frase-pt" class="traducao-pt">
-                "Clique no botão para revelar seu destino."
-            </blockquote>
             
-            <p id="autor" class="autor-texto">- Management</p>
+            <img id="foto-personagem" src="" alt="Personagem The Office">
         </div>
         
-        <button onclick="sortearFrase()">Tirar uma frase</button>
-    </div>
+        <section class="conteudo-frase">
+            <div class="box-idioma">
+                <span class="badge">EN</span>
+                <blockquote id="frase-en" class="texto-principal">
+                    "Click the button to get some Dundie-worthy wisdom."
+                </blockquote>
+            </div>
+            
+            <hr class="divisor">
+            
+            <div class="box-idioma">
+                <span class="badge">PT</span>
+                <blockquote id="frase-pt" class="texto-secundario">
+                    "Clique no botão para receber uma sabedoria nível Dundie."
+                </blockquote>
+            </div>
+            
+            <p id="autor" class="autor-texto">- A Gerência</p>
+        </section>
+        
+        <div class="rodape-oraculo">
+            <button onclick="sortearFrase()" class="btn-primario">
+                O que define meu dia?
+            </button>
+        </div>
+    </main>
+
+   
+    <footer class="legal-footer">
+        <p>Desenvolvido exclusivamente para fins de estudo e prática de programação.</p>
+        <p>"The Office" e seus personagens são propriedades intelectuais da NBCUniversal.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
